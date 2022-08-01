@@ -1,0 +1,22 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "debug: server-side",
+			"type": "node-terminal",
+			"request": "launch",
+			"command": "npm run dev"
+		},
+		{
+			"name": "debug: full stack",
+			"type": "node-terminal",
+			"request": "launch",
+			"command": "npm run dev",
+			"serverReadyAction": {
+				"pattern": "started server on .+, url: (https?://.+)",
+				"uriFormat": "%s",
+				"action": "debugWithEdge"
+			}
+		}
+	]
+}
