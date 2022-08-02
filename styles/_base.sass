@@ -1,0 +1,47 @@
+@function getRGB($c)
+	@return red($c) + ',' + green($c) + ',' + blue($c)
+
+html
+	font-size: 18px
+	scroll-behavior: smooth
+	overflow-x: hidden
+	--nav-height: 3.5rem
+	$color: #d62643
+	--color-primary: #{getRGB($color)}
+	&.dark, &[data-theme='dark']
+		$color: #f35771
+		--color-primary: #{getRGB($color)}
+
+
+body
+	@apply bg-gray-1 dark:bg-gray-9
+
+#__next
+	@apply flex flex-col min-h-screen
+
+h1,.head-1
+	@apply font-heading text-3xl
+h2,.head-2
+	@apply font-heading text-2xl
+h3,.head-3
+	@apply font-heading text-xl
+h4,.head-4
+	@apply font-heading text-lg
+h5,.head-5, h6,.head-6
+	@apply font-heading
+
+a
+	@apply text-fuchsia-800 dark:text-fuchsia-300 cursor-pointer
+img
+	object-fit: cover
+hr
+	@apply border-gray-300 dark:border-gray-700 flex-1
+
+input
+	background: none
+
+[multiple], [type=date], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], select, textarea
+	@apply px-3 py-2 rounded appearance-none
+
+.container
+	@apply max-w-xl md:max-w-3xl

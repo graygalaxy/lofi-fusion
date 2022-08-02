@@ -1,0 +1,20 @@
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+@layer components
+	.flex-center
+		@apply items-center justify-center
+
+	.excerpt-1
+		overflow: hidden
+		text-overflow: ellipsis
+		display: -webkit-box
+		-webkit-box-orient: vertical
+		-webkit-line-clamp: 1
+	@for $i from 2 to 9
+		.excerpt-#{$i}
+			@extend .excerpt-1
+			-webkit-line-clamp: #{$i}
+
+@import 'base'
