@@ -11,7 +11,8 @@ export function classes(...args: any[]): string {
 			let inner = classes.apply(null, arg)
 			if (inner) names.push(inner)
 		} else if (argType === Object) {
-			let entries = Object.entries(arg)
+			let hasClassName = typeof arg.className === 'string'
+			let entries = Object.entries(hasClassName ? arg.className : arg)
 			entries.map(([key, value]) => value && names.push(key))
 		}
 		return
@@ -25,10 +26,7 @@ export function classes(...args: any[]): string {
  * @example dashify('Google This') // 'google-this'
  * @link https://github.com/jonschlinkert/dashify
  */
- export function dashify(
-	string: string,
-	condense: boolean = true
-) {
+export function dashify(string: string, condense: boolean = true) {
 	if (typeof string !== 'string') throw new TypeError('expected a string')
 	return string
 		.trim()
