@@ -4,19 +4,18 @@
 	"editor.useTabStops": true,
 	// Font Ligature
 	"editor.fontLigatures": true,
-	"editor.fontFamily": "'fira code','cascadia code', Consolas, 'Courier New', monospace",
+	"editor.fontFamily": "'fira code', 'cascadia code', Consolas, 'Courier New', monospace",
 	// Hide files and folders
 	"files.exclude": {
-		"**/.vercel": false,
-		"**/.vscode": false,
-		"**/.next": false,
-		"**/.swc": false,
-		"**/.gitmodules": false,
-		"**/node_modules": false,
-		"**/next-env.d.ts": false,
-		"**/yarn.lock": false,
-		"**/pnpm-lock.yaml": false,
-		"**/package-lock.json": false
+		"**/.vercel": true,
+		"**/.next": true,
+		"**/.swc": true,
+		"**/.gitmodules": true,
+		"**/node_modules": true,
+		"**/next-env.d.ts": true,
+		"**/yarn.lock": true,
+		"**/pnpm-lock.yaml": true,
+		"**/package-lock.json": true
 	},
 	// Prettier config
 	"prettier.singleQuote": true,
